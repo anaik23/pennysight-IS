@@ -61,3 +61,6 @@ Wangcheng is the brain towards the back-end development of PennySight. He is cur
 
 **Additional Features:**
 * [ ] The app can pull data from their bank/credit card account to automatically fill in their monthly spending expenses
+
+**Unit test passed for the User class:**
+![alt text](unittest.png)
