@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lan="en" and dir="Itr">
+<head>
+    <meta charset="utf=8">
+    <title> Login Page Form </title>
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+<body>
+    <form class="login_page" action="login.html" method="POST">
+
+        <h1>
+            PennySight Login
+        </h1>
+        <input type="text" name="" placeholder="Enter Username" id="username">
+        <input type="password" name="" placeholder="Enter Password" id="password">
+        <!-- <input type="submit" name="" value="Login" id="btn"> -->
+        <button id="btn">Login</button>
+    <div id="msg">
+        <pre></pre>
+    </div>
+    </form>
+
+
+
+<script>
+    
+// example {id:3214125124, name: 'Mark', lastName: joe}
+
+const addUser = (ev)=>
+{
+    ev.preventDefault(); //to stop the form submitting
+    let user = 
+    {
+        id: Date.now(),
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value
+    }
+    document.forms[0].reset();
+
+    console.warn('added', {user} );
+    let pre = document.querySelector('#msg pre');
+    pre.textContent = '\n' + JSON.stringify(user, '\t', 2);
+
+    const request = new XMLHttpRequest();
+    var url = new URL("http://localhost:8080/user/" + document.getElementById('username').value);
+    const link = url;
+    request.open("GET", link);
+    request.send();
+
+    request.onload = (e) => {
+        alert(request.response);
+    }
+}
+    
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('btn').addEventListener('click', addUser);
+    });
+        
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+<!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"> </script> -->
+<!-- AWS.config.update({
+region: "us-west-1",
+endpoint: 'dynamodb.us-west-1.amazonaws.com',
+// accessKeyId default can be used while using the downloadable version of DynamoDB.
+// For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+accessKeyId: "AKIARMLJF47HY2K3OEN5",
+// secretAccessKey default can be used while using the downloadable version of DynamoDB.
+// For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+secretAccessKey: "zpHuegoGoepWv6QYhftvLJ0Dsc33YiF7ZJUZytEO"
+});
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+function readItem() {
+var table = "cs151_user";
+var username = username;
+var password = password;
+
+var params = {
+TableName: table,
+Key:{
+"username": username,
+"password": password
+}
+};
+docClient.get(params, function(err, data) {
+if (err) {
+document.getElementById('textarea').innerHTML = "Unable to Login: " + "\n" + JSON.stringify(err, undefined, 2);
+} else {
+document.getElementById('textarea').innerHTML = "Succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
+}
+});
+}
+
+ -->
