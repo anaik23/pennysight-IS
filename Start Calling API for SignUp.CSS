@@ -1,0 +1,227 @@
+
+.Signup_page 
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+.Signup_page
+{
+    position: absolute;
+	width: 1920px;
+	height: 1080px;
+    text-align: center;
+	overflow: hidden;
+    background:url(thi.jpg);
+    background-size: cover;
+	--web-view-name: Sign Up Page;
+	--web-view-id: Sign_Up_Page;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+
+}
+.Signup_page h1
+{
+    left:730px;
+	top: 20px;
+	position: absolute;
+	overflow: visible;
+	width: 358px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(247, 246, 242, 0.925);
+}
+.Signup_page input[type = "text"]
+{
+    left: 550px;
+	top: 200px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-weight: normal;
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+}
+.Signup_page input[type="password"]
+{
+     left: 550px;
+	top: 250px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+}
+.Signup_page input[id="Grocery"]
+{
+     left: 550px;
+	top: 300px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+}
+.Signup_page input[type="date"]
+{
+     left: 550px;
+	top: 350px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+
+}
+
+.Signup_page input[id="rent"]
+{
+         left: 550px;
+        top: 400px;
+        position: absolute;
+    	overflow: visible;
+    	width: 300px;
+    	white-space: nowrap;
+    	text-align: left;
+    	font-family: Rockwell;
+    	font-style: normal;
+    	font-weight: normal;
+        background-color: rgba(230, 228, 218, 0.849);
+    	font-size: 25px;
+    	color: rgb(41, 5, 5);
+}
+
+.Signup_page input[id="Subscription"]
+{
+    left: 900px;
+	top: 400px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+}
+.Signup_page input[id="Saving"]
+{
+     left: 900px;
+	top: 350px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+}
+
+.Signup_page input[id="Gas"]
+{
+    left: 900px;
+	top: 200px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+
+}
+.Signup_page input[id="Auto_insurance"]
+{
+    left: 900px;
+	top: 250px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+
+}
+.Signup_page input[id="Entertainment"]
+{
+    left: 900px;
+	top: 300px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Rockwell;
+	font-style: normal;
+	font-weight: normal;
+    background-color: rgba(230, 228, 218, 0.849);
+	font-size: 25px;
+	color: rgb(41, 5, 5);
+
+}
+.Signup_page button {
+        position: absolute;
+        overflow: visible;
+        display: block;
+        width: 500px;
+        height: 55px;
+        left: 630px;
+        background: linear-gradient(to right, #14d454, #0ea0cc);
+        border-radius: 30px;
+        color: white;
+        font-weight: bolder;
+        top: 500px;
+        font-size: 30px;
+        font-family: Rockwell;
+        font-weight: normal;
+        --web-animation: fadein 0.3s ease-out;
+        --web-action-type: page;
+        --web-action-target: Profile_Page.html;
+        cursor: pointer;
+
+}
