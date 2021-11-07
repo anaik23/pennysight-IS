@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel ="stylesheet" href="Style_singup.css">
+</head>
+<body>
+    <form class="Signup_page" action="Sign_up.html" method="POST">
+        <h1>
+            Sign Up
+        </h1>
+        <input type ="text" name="" placeholder="Enter user name" id="username">
+        <input type="password" name="" placeholder="Enter Password" id="password">
+        <input type="date" name="" placeholder="Enter Date" id ="date">
+        <input type="number" name="" placeholder="Enter Rent" id ="rent">
+        <input type="number" name="" placeholder="Enter Grocery" id ="Grocery">
+        <input type="number" name="" placeholder="Enter Subscription" id ="Subscription">
+        <input type="number" name="" placeholder="Enter Saving" id ="Saving">
+        <input type="number" name="" placeholder="Enter Gas-Amount" id ="Gas">
+        <input type="number" name="" placeholder="Enter Auto_insurance" id ="Auto_insurance">
+        <input type="number" name="" placeholder="Enter Entertainment" id ="Entertainment">
+​
+​
+        <button id ="button">Submit</button>
+    <div id="msg">
+        <pre></pre>
+    </div>
+    </form>
+<script>
+    const addNewMembers = (ev)=>
+    {
+       ev.preventDefault();
+       fetch("localhost:8080/user/", {
+            method: "POST",
+            body: JSON.stringify({
+                
+                    username: "hi",
+                    password: "12345",
+                    date: "1997",
+                    rent: 900.0,
+                    grocery: 50.0,
+                    subscription: 40.0,
+                    saving: 1000.0,
+                    gas: 50.0,
+                    auto_insurance: 300.0,
+                    entertainment: 400.0
+                
+            })
+        }).then(result => {
+            // do something with the result
+            console.log("Completed with result:", result);
+        }).catch(err => {
+            // if any error occured, then catch it here
+            console.error(err);
+        });    
+       
+       
+//         let newUser =
+//             {
+//                 id: Date.now(),
+//                 username: document.getElementById('username').value,
+//                 email: document.getElementById('email').value,
+//                 password: document.getElementById('password').value
+//             }
+//             document.forms[0].reset();
+// ​
+//         console.warn('added', {newUser} );
+//         let pre = document.querySelector('#msg pre');
+//         pre.textContent = '\n' + JSON.stringify(newUser, '\t', 2);
+​
+    }
+        document.addEventListener("DOMContentLoaded",()=>{
+            document.getElementById("button").addEventListener('click', addNewMembers);
+​
+    });
+</script>
+</body>
+</html>
