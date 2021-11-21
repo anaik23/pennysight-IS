@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel ="stylesheet" href="chart.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const user = urlParams.get('username');
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        var url = new URL("http://localhost:8080/user/" + user);
+        const link = url;
+        req.open('GET', link, true);
+        req.onload = function() {
+          var jsonResponse = req.response;
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Rent', jsonResponse.rent],
+            ['Grocery', jsonResponse.grocery],
+            ['Subscription', jsonResponse.subscription],
+            ['Saving', jsonResponse.saving],
+            ['Gas', jsonResponse.gas],
+            ['Auto_insurance', jsonResponse.auto_insurance],
+            ['Entertainment', jsonResponse.entertainment],
+          ]);
+
+          var options = {
+            title: 'Monthly Expenses'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+          chart.draw(data, options);
+
+        };
+        
+        
+        
+        
+        req.send(null);
+        
+        
+        
+
+        
+
+      }
+    </script>
+</head>
+<body>
+<div id="piechart" class="chart"></div>
+</body>
+</html>
