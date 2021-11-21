@@ -19,8 +19,13 @@ public class UserController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/user/{username}")
-    public User getUser(@PathVariable String username) {
-        return userRepository.getUserByUsername(username);
+    public User getUser(@PathVariable String username) throws Exception {
+        if (userRepository.getUserByUsername(username) == null) {
+            throw new Exception("Not Found");
+        } else {
+            return userRepository.getUserByUsername(username);
+        }
+//        return userRepository.getUserByUsername(username);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
