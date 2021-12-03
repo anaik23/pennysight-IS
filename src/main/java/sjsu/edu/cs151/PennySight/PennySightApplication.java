@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * This class is the main application to start
- * @SpringApplication means @Configuration + @EnableConfiguration + @ComponentScan
+ * SpringApplication means @Configuration + @EnableConfiguration + @ComponentScan
  * @author PennySight
  */
 @SpringBootApplication

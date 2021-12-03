@@ -6,10 +6,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * This class the unit test to test the User model class
- * @Test annotation means the method is a unit test
+ * Test annotation means the method is a unit test
  * @author PennySight
  */
 public class UserTests {
+    /**
+     * This method is to test setter and getter for the username
+     * @throws Exception
+     */
     @Test
     public void usernameTest() throws Exception {
         User user1 = new User();
@@ -20,6 +24,10 @@ public class UserTests {
         assertThat(user1).isNotEqualTo("Alice");
     }
 
+    /**
+     * This method is to test setter and getter for the password
+     * @throws Exception
+     */
     @Test
     public void passwordTest() throws Exception {
         User user1 = new User();

@@ -23,6 +23,10 @@ public class DynamoDBConfiguration {
         return new DynamoDBMapper(buildAmazonDynamoDB());
     }
 
+    /**
+     * This method is to connect to Dynamodb by giving access key, secret key, and region id
+     * @return
+     */
     private AmazonDynamoDB buildAmazonDynamoDB() {
         return AmazonDynamoDBClientBuilder
                 .standard()
