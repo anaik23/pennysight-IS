@@ -13,8 +13,11 @@
         </h1>
         <input type="text" name="" placeholder="Enter Username" id="username">
         <input type="password" name="" placeholder="Enter Password" id="password">
+
         <!-- <input type="submit" name="" value="Login" id="btn"> -->
-        <button id="btn">Login</button>
+        <button id="btnLogin">Login</button>
+        <button onclick="location.href='signup.html'" type="button">Sign Up</button>
+
     <div id="msg">
         <pre></pre>
     </div>
@@ -25,38 +28,37 @@
 <script>
     
 // example {id:3214125124, name: 'Mark', lastName: joe}
-
-const addUser = (ev)=>
+const logInUser = (ev)=>
 {
     ev.preventDefault(); //to stop the form submitting
-    let user = 
-    {
-        id: Date.now(),
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value
-    }
-    document.forms[0].reset();
-
-    console.warn('added', {user} );
-    let pre = document.querySelector('#msg pre');
-    pre.textContent = '\n' + JSON.stringify(user, '\t', 2);
-
-    const request = new XMLHttpRequest();
-    var url = new URL("http://localhost:8080/user/" + document.getElementById('username').value);
+    var req = new XMLHttpRequest();
+    req.responseType = 'json';
+    var user = document.getElementById('username').value
+    var pass = document.getElementById('password').value
+    var url = new URL("http://localhost:8080/user/" + user);
     const link = url;
-    request.open("GET", link);
-    request.send();
+    req.open('GET', link, true);
+    req.onload = function () {
+        var jsonResponse = req.response;
+        var correctUser = jsonResponse.username;
+        var correctPassword = jsonResponse.password;
+        if(user == correctUser && pass == correctPassword)
+        {
+            window.location.href = 'chart.html?username='+ user;
+        }
 
-    request.onload = (e) => {
-        alert(request.response);
     }
+    req.send(null);
+
+   
+   
 }
-    
 
     document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('btn').addEventListener('click', addUser);
+        document.getElementById('btnLogin').addEventListener('click', logInUser);
     });
         
+
 
 </script>
 

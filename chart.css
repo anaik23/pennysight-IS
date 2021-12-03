@@ -1,0 +1,14 @@
+*{
+   padding: 0;
+   margin: 0;
+   background:url(two.jpg);
+}
+.chart
+  {
+    margin:120px auto;
+    width:75%;
+    height: 700px;
+
+
+
+  }
