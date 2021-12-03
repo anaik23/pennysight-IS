@@ -9,9 +9,15 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * This class is the configuration for the AWS Dynamodb using AWS SDK
+ * By providing the access key and secret access key that generated from AWS IAM
+ * Then giving the region id to connect to the AWS DynamoDB
+ * The access key and secret access key would be rotated after the class is done
+ * @author PennySight
+ */
 @Configuration
 public class DynamoDBConfiguration {
-
     @Bean
     public DynamoDBMapper dynamoDBMapper() {
         return new DynamoDBMapper(buildAmazonDynamoDB());

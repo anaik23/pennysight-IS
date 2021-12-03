@@ -1,13 +1,15 @@
 package sjsu.edu.cs151.PennySight;
 
-
 import org.junit.jupiter.api.Test;
 import sjsu.edu.cs151.PennySight.model.User;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * This class the unit test to test the User model class
+ * @Test annotation means the method is a unit test
+ * @author PennySight
+ */
 public class UserTests {
-
     @Test
     public void usernameTest() throws Exception {
         User user1 = new User();
